@@ -1,15 +1,11 @@
 version: 0.2
-
 phases:
   install:
     runtime-versions:
       python: 3.9
   build:
     commands:
-      - echo "Preparando entorno..."
-      - mkdir -p tests
-      - echo "def test_simple(): assert True" > tests/test_app.py
-      - pip install pytest flask
+      - echo "Ejecutando pruebas"
       - pytest tests/
   post_build:
     commands:
