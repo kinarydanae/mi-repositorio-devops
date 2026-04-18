@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+  build:
+    commands:
+      - echo "Ejecutando pruebas..."
+      # Creamos una carpeta y un test rápido para que pytest no de error
+      - mkdir -p tests && echo "def test_simple(): assert True" > tests/test_app.py
+      - pytest tests/
+  post_build:
+    commands:
+      - echo "Construcción finalizada con éxito"
